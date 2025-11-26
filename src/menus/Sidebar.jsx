@@ -1,23 +1,24 @@
-import { BrowserRouter, Link } from "react-router";
+
+import { NavLink } from "react-router";
 const Sidebar = () => {
   return (
-    <BrowserRouter>
+    <>
 	{/* Sidebar */}
 <div className="sidebar" id="sidebar">
   {/* Logo */}
   <div className="sidebar-logo active">
-    <a href="/" className="logo logo-normal">
+    <NavLink to="/" className="logo logo-normal">
       <img src="/src/assets/img/logo.png" alt="Img" />
-    </a>
-    <a href="/" className="logo logo-white">
+    </NavLink>
+    <NavLink to="/" className="logo logo-white">
       <img src="/src/assets/img/logo.png" alt="Img" />
-    </a>
-    <a href="/" className="logo-small">
+    </NavLink>
+    <NavLink to="/" className="logo-small">
       <img src="/src/assets/img/logo-small.png" alt="Img" />
-    </a>
-    <a id="toggle_btn" href="javascript:void(0);">
+    </NavLink>
+    <NavLink to="toggle_btn" href="javascript:void(0);">
       <i data-feather="chevrons-left" className="feather-16" />
-    </a>
+    </NavLink>
   </div>
   {/* /Logo */}
   <div className="modern-profile p-3 pb-0">
@@ -30,9 +31,9 @@ const Sidebar = () => {
     </div>
     <div className="sidebar-nav mb-3">
       <ul className="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified bg-transparent" role="tablist">
-        <li className="nav-item"><a className="nav-link active border-0" href="#">Menu</a></li>
-        <li className="nav-item"><a className="nav-link border-0" href="chat.html">Chats</a></li>
-        <li className="nav-item"><a className="nav-link border-0" href="email.html">Inbox</a></li>
+        <li className="nav-item"><NavLink className="nav-link active border-0" to="#">Menu</NavLink></li>
+        <li className="nav-item"><NavLink className="nav-link border-0" to="#">Chats</NavLink></li>
+        <li className="nav-item"><NavLink className="nav-link border-0" href="#">Inbox</NavLink></li>
       </ul>
     </div>
   </div>
@@ -48,30 +49,30 @@ const Sidebar = () => {
     </div>
     <div className="d-flex align-items-center justify-content-between menu-item mb-3">
       <div>
-        <a href="/" className="btn btn-sm btn-icon bg-light">
+        <NavLink to="/" className="btn btn-sm btn-icon bg-light">
           <i className="ti ti-layout-grid-remove" />
-        </a>
+        </NavLink>
       </div>
       <div>
-        <a href="chat.html" className="btn btn-sm btn-icon bg-light">
+        <NavLink to="chat.html" className="btn btn-sm btn-icon bg-light">
           <i className="ti ti-brand-hipchat" />
-        </a>
+        </NavLink>
       </div>
       <div>
-        <a href="email.html" className="btn btn-sm btn-icon bg-light position-relative">
+        <NavLink to="email.html" className="btn btn-sm btn-icon bg-light position-relative">
           <i className="ti ti-message" />
-        </a>
+        </NavLink>
       </div>
       <div className="notification-item">
-        <a href="activities.html" className="btn btn-sm btn-icon bg-light position-relative">
+        <NavLink to="activities.html" className="btn btn-sm btn-icon bg-light position-relative">
           <i className="ti ti-bell" />
           <span className="notification-status-dot" />
-        </a>
+        </NavLink>
       </div>
       <div className="me-0">
-        <a href="general-settings.html" className="btn btn-sm btn-icon bg-light">
+        <NavLink to="general-settings.html" className="btn btn-sm btn-icon bg-light">
           <i className="ti ti-settings" />
-        </a>
+        </NavLink>
       </div>
     </div>
         </div>
@@ -82,13 +83,14 @@ const Sidebar = () => {
         <li className="submenu-open">
           <h6 className="submenu-hdr">Main</h6>
           <ul>
-            <li className="active"><a href="/"><i className="ti ti-layout-grid fs-16 me-2" /><span>ANK Dashboard</span></a></li>
+            <li className="active"><NavLink to="/"><i className="ti ti-layout-grid fs-16 me-2" /><span>ANK Dashboard</span></NavLink></li>
           </ul>
         </li>
         <li className="submenu-open">
           <h6 className="submenu-hdr">Inventory</h6>
           <ul>
-            <li><a href="productList"><i data-feather="box" /><span>Products</span></a></li>           
+                  <li><NavLink to="/productList"><i data-feather="box" /><span>Products</span></NavLink></li>  
+            <li><NavLink to="/addProduct"><i class="ti ti-table-plus fs-16 me-2"></i><span>Create Product</span></NavLink></li>      
           </ul>
               </li>
        
@@ -99,7 +101,7 @@ const Sidebar = () => {
 </div>
 {/* /Sidebar */}
 
-    </BrowserRouter>
+    </>
   )
 }
 
